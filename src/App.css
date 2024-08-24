@@ -1,38 +1,120 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  color: #ffffff; /* Default color */
+  background-color: #4F805D; /* Background color */
+}
+
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #4F805D; /* Background color */
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* Ensure content starts at the top */
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem 2rem;
+  background: transparent;
+  position: fixed; /* Fixed position for the navbar */
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navigation container */
+.navbar nav {
+  flex-grow: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Links + navigation */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Gap between links */
+.navbar ul li {
+  margin-right: 0.1rem;
+}
+
+.navbar ul li:last-child {
+  margin-right: 0;
+}
+
+/* Links style */
+.navbar ul li a {
+  color: #ffffff80;
+  text-decoration: none;
+  font-weight: 550;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  padding-top: 2rem;
+}
+
+/* Hover effect for active link */
+.navbar ul li a:hover {
+  color: #ffffff; /* Hover color */
+}
+
+/* Active link */
+.navbar ul li a.active {
+  color: #ffffff; 
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  width: 24px;
+  height: 24px;
+  margin: 2rem auto 4rem auto;
+  animation: bounce 5s infinite ease-in-out; 
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-20px);
   }
+}
+
+/* Versteckt die Scrollbar für Webkit-Browser */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Versteckt die Scrollbar für Firefox */
+body {
+  scrollbar-width: none;
+  overflow-y: scroll; /* Erlaubt vertikales Scrollen */
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }

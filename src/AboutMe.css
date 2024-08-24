@@ -1,0 +1,25 @@
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4F805D;
+}
+
+.hero-text {
+  font-size: 4rem; 
+  font-weight: 700; 
+  background: linear-gradient(to right, #9CC19C, #B8D1B4);
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent; 
+  margin: 0;
+}
+
+.hero-description {
+  font-size: 1.25rem; 
+  font-weight: 300; 
+  color: #ffffff80; 
+  margin: 0;
+}
